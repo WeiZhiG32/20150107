@@ -1,0 +1,62 @@
+<!DOCTYPE　html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+    function clearText() {
+            var inputs = document.querySelectorAll('.valuestyle');
+            for(i = 0;i < 3; i++){
+                inputs[i].value = '';
+                document.all("R1")[i].checked =false;
+            }
+    }
+
+    function prints () {
+        
+            var a = document.querySelector('#name').value;
+            document.getElementById('result').value = a;  
+            alert(a.length);
+            var b = document.querySelector('#sex').value;
+            document.getElementById('result').value = b;  
+            alert(b);
+      
+    }
+
+        function RR(){
+            var obj2=eval(document.all("R1"));
+            for(i=0;i<obj2.length;i++){
+            document.all("R1")[i].checked =false;
+            }
+        }
+     function test() {
+        if(document.a.b.value.length>50)
+        {
+            alert("不能超過50個字元！");
+            document.a.b.focus();
+            return false;
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>會員資料</h1>
+    <p>名字 : <input  id="name"  type="text" class="valuestyle"/></p>
+
+    <FORM method="POST" name="RRForm">
+        姓名:
+        <INPUT type="radio" value="V1" name="R1" checked>男
+        <INPUT type="radio" name="R1" value="V2">女
+        <INPUT type="button" value="取消" name="B1" Onclick="RR()">
+    </FORM> 
+    <form name=a >
+        <textarea name="b" cols="40" wrap="VIRTUAL"rows="6"></textarea>
+        <input type="submit" name="Submit"value="check">
+    </form> 
+    
+    <button id="clear"  onclick="clearText()">完成</button>
+    <button id="determine" onclick="prints()">確定</button>
+    <hr />
+    <output id="result" class="valuestyle"/></output>
+</body>
+</html>
